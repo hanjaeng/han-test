@@ -5,12 +5,13 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
+
 class _HomeState extends State<Home> {
   //Property
   late int count;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     count = 0;
   }
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Count up & Down'),
+        title: Text('Count upup & Down'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
               child: Text(
                 '현재 클릭수는 $count 입니다.',
                 style: TextStyle(
-                  fontSize:20,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -40,33 +41,35 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              FloatingActionButton(                      // 가운데 버튼
-                shape: CircleBorder(),
-                onPressed: (){
-                count++;
-                setState((){});
-                },
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-                child: Icon(Icons.add),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: FloatingActionButton(          // 가운데 버튼
-                shape: CircleBorder(),
-                onPressed: (){
-                  count--;
-                  setState((){});
-                },
-                backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
-                child: Icon(Icons.remove,
-              ),
-              ),
-            ),
-            ],)
-            
+                FloatingActionButton(
+                  // 가운데 버튼
+                  shape: CircleBorder(),
+                  onPressed: () {
+                    count++;
+                    setState(() {});
+                  },
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  child: Icon(Icons.add),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: FloatingActionButton(
+                    // 가운데 버튼
+                    shape: CircleBorder(),
+                    onPressed: () {
+                      count--;
+                      setState(() {});
+                    },
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    child: Icon(
+                      Icons.remove,
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -78,16 +81,15 @@ class _HomeState extends State<Home> {
       //         backgroundColor: Colors.blue,
       //         foregroundColor: Colors.white,
       //         child: Icon(Icons.add),
-      //       ),      
-      
-    // floatingActionButton: ElevatedButton(       // 우측하단
-    //   onPressed: (){
-    //     count++;
-    //     setState((){});
-    //   },
-    //   child: Text("ADD")
-    // ),
+      //       ),
 
+      // floatingActionButton: ElevatedButton(       // 우측하단
+      //   onPressed: (){
+      //     count++;
+      //     setState((){});
+      //   },
+      //   child: Text("ADD")
+      // ),
     );
   }
 }
